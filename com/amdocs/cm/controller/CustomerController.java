@@ -28,4 +28,16 @@ public class CustomerController {
         Customer customer = customerService.getCustomerByEmail(email);
         return ResponseEntity.ok(customer);
     }
+
+    @PutMapping
+    public ResponseEntity<Customer> updateCustomer(@RequestBody Customer customer) {
+        Customer createdCustomer = customerService.updateCustomer(customer);
+        return ResponseEntity.status(HttpStatus.CREATED).body(createdCustomer);
+    }
+
+    @PatchMapping
+    public ResponseEntity<Customer> updateCustomerDetails(@RequestBody Customer customer) {
+        Customer createdCustomer = customerService.updateCustomer(customer);
+        return ResponseEntity.status(HttpStatus.CREATED).body(createdCustomer);
+    }
 }
