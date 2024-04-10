@@ -20,4 +20,8 @@ public class CustomerService {
     public Customer getCustomerByEmail(String emailAddress) {
         return customerRepository.findByEmailAddress(emailAddress);
     }
+    
+    public Customer updateCustomer(Customer customer) {
+        return customerRepository.save(customer);
+    }
 }
